@@ -1,0 +1,479 @@
+/* === Variables de marca === */
+:root {
+    --color-primary: #0d6efd;
+    /* Azul Nexa */
+    --color-dark: #0b0c10;
+    --color-light: #f8f9fa;
+    --color-accent: #1f2833;
+    --color-text: #222;
+    --font-main: 'Poppins', 'Segoe UI', sans-serif;
+}
+
+/* === Reset y global === */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-family: var(--font-main);
+    color: var(--color-text);
+    background-color: var(--color-light);
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    /* evita scroll lateral */
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: 600;
+    color: var(--color-dark);
+}
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* === Header === */
+.header {
+    background-color: var(--color-dark);
+    color: white;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    width: 100%;
+}
+
+.logo {
+    height: 50px;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav a {
+    color: white;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav a:hover {
+    color: var(--color-primary);
+}
+
+/* === Hero === */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 5rem 1rem;
+    background: linear-gradient(135deg, var(--color-dark), var(--color-primary));
+    color: white;
+    width: 100%;
+    min-height: 100vh;
+    /* ocupa toda la altura de la ventana */
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.hero h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    line-height: 1.2;
+    margin-bottom: 30px;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    margin-top: 1rem;
+    line-height: 1.6;
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: var(--color-primary);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    margin-top: 1.5rem;
+    transition: background 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #084298;
+}
+
+/* === Servicios === */
+.services {
+    padding: 4rem 1rem;
+    text-align: center;
+    width: 100%;
+}
+
+.services h2 {
+    font-size: 2rem;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+    max-width: 1200px;
+    margin-inline: auto;
+    width: 100%;
+}
+
+.service-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.service-card img {
+    border-radius: 8px;
+}
+
+/* === Nosotros === */
+.about {
+    background-color: #1f2833c7;
+    color: white;
+    padding: 4rem 1rem;
+    width: 100%;
+}
+
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-text {
+    flex: 1 1 400px;
+}
+
+.about-text h2 {
+    margin-bottom: 10px;
+}
+.about-image {
+    flex: 1 1 400px;
+    border-radius: 10px;
+    max-width: 10%;
+}
+
+/* === Planes === */
+/* === Sección de Planes y Pricing === */
+.pricing {
+    padding: 5rem 2rem;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.pricing .section-title {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.pricing .section-subtitle {
+    color: #555;
+    margin-bottom: 3rem;
+}
+
+.pricing-cards {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.pricing-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 2rem 1.5rem;
+    width: 250px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.pricing-card.nexa {
+    background-color: #e2e8f0;
+}
+
+.pricing-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.pricing-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    color: #222;
+}
+
+.price {
+    font-size: 2rem;
+    color: #0077ff;
+    margin-bottom: 1rem;
+}
+
+.nexa-plan {
+    font-size: 1.5rem;
+    color: #0077ff;
+    margin-top: -11px;
+}
+
+.price span {
+    font-size: 1rem;
+    color: #666;
+}
+
+.pricing-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 00 0;
+}
+
+.pricing-card ul li {
+    margin: 0.5rem 0;
+    color: #444;
+}
+
+.pricing-card .btn {
+    background-color: #0077ff;
+    color: #fff;
+    border: none;
+    padding: 0.8rem 1.2rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.pricing-card .btn:hover {
+    background-color: #005fcc;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .pricing-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .pricing-card {
+        width: 90%;
+    }
+}
+
+
+/* === Contacto === */
+.contact {
+    padding: 4rem 1rem;
+    text-align: center;
+    width: 100%;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 500px;
+    margin: 2rem auto 0;
+    width: 100%;
+}
+
+.contact-form input,
+.contact-form textarea {
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    padding: 0.75rem;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.contact-form button {
+    cursor: pointer;
+}
+
+/* === Footer === */
+.footer {
+    background-color: var(--color-dark);
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+    width: 100%;
+}
+
+.social-links a {
+    color: var(--color-primary);
+    margin: 0 0.5rem;
+    font-weight: 500;
+}
+
+/* === Carrusel tipo feed de Instagram === */
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 600px; /* ajustá según tu diseño */
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+
+  /* Mantiene proporción 1:1 (cuadrado) */
+  aspect-ratio: 1 / 1;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+  height: 100%;
+}
+
+.carousel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* llena el cuadro sin deformar */
+  flex-shrink: 0;
+}
+
+/* Botones de navegación */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  border: none;
+  font-size: 2rem;
+  padding: 0.5rem 0.8rem;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+  z-index: 5;
+}
+
+.carousel-btn:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.carousel-btn.prev {
+  left: 10px;
+}
+
+.carousel-btn.next {
+  right: 10px;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .carousel {
+    max-width: 90%;
+  }
+
+  .carousel-btn {
+    font-size: 1.5rem;
+    padding: 0.4rem 0.6rem;
+  }
+}
+
+
+/* Botones de navegación */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    border: none;
+    font-size: 2rem;
+    padding: 0.5rem 0.8rem;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+    z-index: 5;
+}
+
+.carousel-btn:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.carousel-btn.prev {
+    left: 10px;
+}
+
+.carousel-btn.next {
+    right: 10px;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .carousel-image {
+        height: 250px;
+    }
+
+    .carousel-btn {
+        font-size: 1.5rem;
+        padding: 0.4rem 0.6rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-image {
+        height: 200px;
+    }
+}
