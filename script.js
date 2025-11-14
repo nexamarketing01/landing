@@ -56,4 +56,39 @@ document.addEventListener("DOMContentLoaded", () => {
   // Iniciar
   showImage(currentIndex);
   startAutoSlide();
+
+  // -----------------------------------------
+  // -----------------------------------------
+  // -----------------------------------------
+  // -----------------------------------------
+  // -----------------------------------------
+  // -----------------------------------------
+
+  // Form
+  const form = document.getElementById("contact-form");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const nombre = document.getElementById("customer-name").value;
+    const email = document.getElementById("customer-email").value;
+    const mensaje = document.getElementById("customer-message").value;
+
+    const params = {
+      from_name: nombre,
+      message: mensaje,
+      email: email
+    };
+
+    emailjs
+      .send("service_mdipbkr","template_oaezifj", params)
+      .then(() => {
+        alert("Mensaje enviado correctamente!");
+        form.reset();
+      })
+      .catch((err) => {
+        console.error("Error:", err);
+        alert("Hubo un error al enviar el mensaje.");
+      });
+  });
 });
