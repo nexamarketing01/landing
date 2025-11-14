@@ -206,6 +206,7 @@ a:hover {
 .about-text h2 {
     margin-bottom: 10px;
 }
+
 .about-image {
     flex: 1 1 400px;
     border-radius: 10px;
@@ -366,69 +367,77 @@ a:hover {
 
 /* === Carrusel tipo feed de Instagram === */
 .carousel {
-  position: relative;
-  width: 100%;
-  max-width: 600px; /* ajustá según tu diseño */
-  margin: 0 auto;
-  overflow: hidden;
-  border-radius: 12px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    /* ajustá según tu diseño */
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
 
-  /* Mantiene proporción 1:1 (cuadrado) */
-  aspect-ratio: 1 / 1;
+    /* Mantiene proporción 1:1 (cuadrado) */
+    aspect-ratio: 1 / 1;
 }
 
 .carousel-track {
-  display: flex;
-  transition: transform 0.6s ease-in-out;
-  height: 100%;
+    display: flex;
+    transition: transform 0.6s ease-in-out;
+    height: 100%;
 }
 
 .carousel-image {
-  width: 100%;
-  height: 100%;
-  object-fit: contain; /* llena el cuadro sin deformar */
-  flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* llena el cuadro sin deformar */
+    flex-shrink: 0;
 }
 
 /* Botones de navegación */
 .carousel-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.4);
-  color: #fff;
-  border: none;
-  font-size: 2rem;
-  padding: 0.5rem 0.8rem;
-  cursor: pointer;
-  border-radius: 50%;
-  transition: background-color 0.3s;
-  z-index: 5;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    border: none;
+    font-size: 2rem;
+    padding: 0.5rem 0.8rem;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+    z-index: 5;
 }
 
 .carousel-btn:hover {
-  background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 .carousel-btn.prev {
-  left: 10px;
+    left: 10px;
 }
 
 .carousel-btn.next {
-  right: 10px;
+    right: 10px;
 }
 
 /* Responsivo */
 @media (max-width: 768px) {
-  .carousel {
-    max-width: 90%;
-  }
+    .carousel {
+        max-width: 90%;
+    }
 
-  .carousel-btn {
-    font-size: 1.5rem;
-    padding: 0.4rem 0.6rem;
-  }
+    .carousel img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .carousel-btn {
+        font-size: 1.5rem;
+        padding: 0.4rem 0.6rem;
+    }
 }
 
 
