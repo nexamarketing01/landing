@@ -141,7 +141,8 @@
             <div class="about-text">
                 <h2>Sobre Nosotros</h2>
                 <p>
-                    Somos una <strong>agencia de Marketing Digital</strong> enfocada en ayudar a tu marca a crecer y destacar en el mundo online.
+                    Somos una <strong>agencia de Marketing Digital</strong> enfocada en ayudar a tu marca a crecer y
+                    destacar en el mundo online.
                 </p>
             </div>
             <!-- 🔸 Imagen del equipo o la oficina -->
@@ -153,10 +154,10 @@
     <section id="contacto" class="contact">
         <div class="container">
             <h2>Hablemos de tu proyecto</h2>
-            <form class="contact-form">
-                <input type="text" placeholder="Tu nombre" required />
-                <input type="email" placeholder="Tu email" required />
-                <textarea placeholder="Tu mensaje" rows="4" required></textarea>
+            <form id="contact-form" class="contact-form">
+                <input type="text" placeholder="Tu nombre" id="customer-name" required />
+                <input type="email" placeholder="Tu email" id="customer-email" required />
+                <textarea placeholder="Tu mensaje" rows="4" id="customer-message" required></textarea>
                 <button type="submit" class="btn-primary">Enviar</button>
             </form>
         </div>
@@ -174,6 +175,12 @@
     </footer>
 
     <!-- JS externo -->
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script>
+        (function () {
+            emailjs.init("UcIFc5h8IeoqTXT6u");
+        })();
+    </script>
     <script src="script.js"></script>
 </body>
 
